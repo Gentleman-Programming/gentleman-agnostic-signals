@@ -1,8 +1,24 @@
 import { describe, it, expect } from "bun:test";
-import { initSignalsManager } from "../src";
+import { SignalsState, initSignalsManager } from "../src";
 
 describe("should", () => {
-  const signalsManager = initSignalsManager({ count: 0, test: "" });
+  const StateProperties = {
+    COUNT: "count",
+    TEST: "test",
+  } as const;
+
+  type DefaultState = SignalsState<{
+    [StateProperties.COUNT]: number;
+    [StateProperties.TEST]: string;
+  }>;
+
+  const defaultState: SignalsState<DefaultState> = {
+    // Define your state properties here with their default values
+    count: 0,
+    test: "",
+  };
+
+  const signalsManager = initSignalsManager(defaultState);
 
   it("should create a new instance of SignalsManager", () => {
     expect(signalsManager).toBeDefined();
@@ -17,13 +33,13 @@ describe("should", () => {
   });
 
   it("should have been initialized with the default state", () => {
-    const countSignal = signalsManager.getSignal("count");
+    const countSignal = signalsManager.getSignal(StateProperties.COUNT);
     expect(countSignal.value).toBe(0);
   });
 
   it("should update the signal value", () => {
-    signalsManager.updateSignal("count", 1);
-    const countSignal = signalsManager.getSignal("count");
+    signalsManager.updateSignal(StateProperties.COUNT, 1);
+    const countSignal = signalsManager.getSignal(StateProperties.COUNT);
     expect(countSignal.value).toBe(1);
   });
 });
