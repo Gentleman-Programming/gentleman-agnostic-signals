@@ -51,7 +51,7 @@ const signalsManager = initSignalsManager(defaultState);
 To retrieve a signal from the manager, use the `getSignal` method:
 
 ```typescript
-const mySignal = signalsManager.getSignal("propertyName");
+const mySignal = signalsManager.getSignal(StateProperties.COUNT);
 ```
 
 ### Updating a Signal
@@ -59,7 +59,7 @@ const mySignal = signalsManager.getSignal("propertyName");
 To update a signal in the manager, use the `updateSignal` method:
 
 ```typescript
-signalsManager.updateSignal("propertyName", payload);
+signalsManager.updateSignal(StateProperties.COUNT, payload);
 ```
 
 ## Conclusion
