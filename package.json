@@ -21,7 +21,7 @@
     "url": "git+https://github.com/Gentleman-Programming/gentleman-agnostic-signals.git"
   },
   "bugs": "https://github.com/Gentleman-Programming/gentleman-agnostic-signals/issues",
-  "author": "Alan Buscagla <gentlemanprogramming@gmail.com>",
+  "author": "Alan Buscaglia <gentlemanprogramming@gmail.com>",
   "devDependencies": {
     "bun-plugin-dts": "^0.2.1",
     "@types/bun": "^1.0.0",
