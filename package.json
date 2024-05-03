@@ -1,6 +1,6 @@
 {
-  "name": "my-lib",
-  "version": "0.0.0",
+  "name": "gentleman-agnostic-signals",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "",
@@ -15,16 +15,18 @@
     "bun"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/wobsoriano/pkg-name#readme",
+  "homepage": "https://github.com/Gentleman-Programming/gentleman-agnostic-signals",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/pkg-name.git"
+    "url": "git+https://github.com/Gentleman-Programming/gentleman-agnostic-signals.git"
   },
-  "bugs": "https://github.com/wobsoriano/pkg-name/issues",
-  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "bugs": "https://github.com/Gentleman-Programming/gentleman-agnostic-signals/issues",
+  "author": "Alan Buscagla <gentlemanprogramming@gmail.com>",
   "devDependencies": {
     "bun-plugin-dts": "^0.2.1",
     "@types/bun": "^1.0.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "@preact/signals-core": "^1.6.0"
   }
 }
+
