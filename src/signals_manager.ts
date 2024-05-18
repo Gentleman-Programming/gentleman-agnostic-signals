@@ -1,6 +1,6 @@
 import { Signal, SignalsAdapter, SignalsDomain } from "./domain";
 
-export class SignalsManager<T extends { [K in keyof T]: any }> {
+export class SignalsManager<T extends { [K in keyof T]: T[K] }> {
   signalsCollection = new Map<keyof T, Signal<T[keyof T]>>();
   signalsAdapter: SignalsAdapter<T>;
 
@@ -27,7 +27,7 @@ export class SignalsManager<T extends { [K in keyof T]: any }> {
     return foundSignal;
   }
 
-  updateSignal(key: keyof T, payload: T[keyof T]) {
+  updateSignal<K extends keyof T>(key: K, payload: T[K]) {
     const foundSignal = this.getSignal(key);
 
     this.signalsAdapter.updateSignal(foundSignal, payload);
